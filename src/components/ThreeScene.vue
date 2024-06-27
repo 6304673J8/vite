@@ -3,8 +3,6 @@
 </template>
 
 <script>
-import * as THREE from 'three';
-
 export default {
   name: 'ThreeScene',
   mounted() {
