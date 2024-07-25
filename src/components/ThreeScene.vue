@@ -27,10 +27,10 @@ export default {
 
       camera.position.z = 5;
 
-      const directionalLight = new THREE.DirectionalLight(0xffffff, 0.7);
+      const directionalLight = new THREE.DirectionalLight(0xa280ec, 0.7);
       scene.add(directionalLight);
 
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
+      const ambientLight = new THREE.AmbientLight(0xa280ec, 0.2);
       scene.add(ambientLight);
 
       const animate = () => {
