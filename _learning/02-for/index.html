@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>For Loop</h1>
+        <button v-on:click="showItem = !showItem">Toggle Item</button>
+        <label>Item Name: </label>
+        <input type="text" placeholder="Add Item" @keypress.enter="addItem" v-model="newItem">
+        <label>Name: </label>
+        <input type="number" placeholder="Include Item" @keypress.enter="IncludeItem" v-model="newItem">
+        <br>
+        <h3>Total Items: {{totalItems}} </h3>
+        <hr>
+        <ul>
+            <li v-for="({name,price},id) in items">
+                <span>{{id}} Price: {{ price }}</span>
+                <blockquote v-if="showItem">{{ name }}</blockquote>
+            </li>
+        </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
