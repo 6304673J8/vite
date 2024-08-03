@@ -1,12 +1,10 @@
-import { computed } from "vue";
-
 const {createApp, ref, computed} = Vue;
 
 const app = createApp({
     setup(){
+        const showItem = ref(true);
         const newItem = ref("");
-        const showItem = ref(false);
-        const newItemName = ref("");
+        const newItemPrice = ref(0);
         const items = ref([
             {id: 1, name: "Sword", price: 100},
             {id: 2, name: "Stone", price: 4},
@@ -14,8 +12,9 @@ const app = createApp({
             {id: 4, name: "Droplet", price: 10}
         ]);
         const addItem = () => {
-            items.value.push({id: items.value.length + 1, name: newItem.value, price: newItemName.value});
-            newItemName.value = "";
+            items.value.push({id: items.value.length + 1, name: newItem.value, price: newItemPrice.value});
+            newItem.value = '';
+            newItemPrice.value = 0;
         }
 
         //Computed Property - Calculate Total Items
@@ -24,7 +23,7 @@ const app = createApp({
             return items.value.length;
         });
 
-        return {items, showItem, addItem, totalItems, newItem, newItemName};
+        return {items, showItem, addItem, totalItems, newItem, newItemPrice};
     }
 });
 
